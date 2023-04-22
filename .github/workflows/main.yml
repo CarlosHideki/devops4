@@ -59,4 +59,4 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json' \
             --data '{"content": "Uma nova imagem Docker foi publicada!"}' \
-            $DISCORD_WEBHOOK
+            ${{ secrets.DISCORD_WEBHOOK }}
