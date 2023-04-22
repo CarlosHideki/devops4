@@ -20,11 +20,13 @@
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
-        - name: Install dependencies
-          run: pip install Flask
+        - name: Install dependencies && python3 -V
+            run: pip install Flask
         - run: python3 app.py
+        - name: Wait for 20 seconds
+            run: sleep 20s
         - uses: AppThreat/sast-scan-action@master
-          with:
+            with:
             type: "python"
 
     deploy-job:
